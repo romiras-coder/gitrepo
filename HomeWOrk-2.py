@@ -13,8 +13,8 @@ __author__ = 'Москотлинов Р.И.'
 import random
 x = random.randint(10, 99)
 print("Случайное число: ", x)
-a = [x]
-print(max(a))
+a = ([x])
+print(a)
 
 #print("MAX = ", max(ewa))
 
