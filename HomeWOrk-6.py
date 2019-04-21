@@ -72,7 +72,7 @@ print("Список: ", lst)
 for m in lst:
     if m in lst:
         print(m)
-        #lst2.append(m)
+        lst2.append(m)
 
 print("Преобразовали списки, только уникальные значения: ", lst2)
 
