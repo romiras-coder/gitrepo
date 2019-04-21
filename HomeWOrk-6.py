@@ -41,11 +41,9 @@ print("_" * otstup)
 print("Задача - 3")
 print("")
 
-# import random
-# # L = [random.randint(-100, 100)]
-# L = []
-# print(L)
-
+import random
+L = [i for i in range(-100, 101)]
+print(len(L), sorted(L))
 print("_" * otstup)
 
 # Задача-4: Дан список, заполненный произвольными целыми числами.
@@ -70,7 +68,7 @@ print("Список: ", lst)
 # print("Преобразовали списки, только уникальные значения: ", lst2)
 
 for m in lst:
-    if m in lst:
+    if not m != lst2:
         print(m)
         lst2.append(m)
 
