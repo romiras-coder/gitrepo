@@ -46,7 +46,7 @@ print("")
 
 import random
 L = [i for i in range(-100, 101)]
-print(len(L), sorted(L))
+print("Диапазоне от -100 до 100", sorted(L))
 print("_" * otstup)
 
 # Задача-4: Дан список, заполненный произвольными целыми числами.
@@ -70,12 +70,11 @@ print("Список: ", lst)
 #         #print(lst2)
 # print("Преобразовали списки, только уникальные значения: ", lst2)
 
-for m in lst:
-    if  m :
-        print(m)
-        lst2.append(m)
+
+
 
 print("Преобразовали списки, только уникальные значения: ", lst2)
 
 
 print("_" * otstup)
+
