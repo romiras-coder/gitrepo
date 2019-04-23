@@ -63,18 +63,27 @@ lst = [1, 2, 4, 5, 6, 2, 5, 2]
 lst2 = []
 
 print("Список: ", lst)
-#print("Преобразовали списки в множество, только уникальные значения: ", set(lst))
-# for n in lst:
-#     if n not in lst2:
-#         lst2.append(n)
-#         #print(lst2)
-# print("Преобразовали списки, только уникальные значения: ", lst2)
 
-
+for n in lst:
+    if n not in lst2:
+        lst2.append(n)
+        #print(lst2)
+# for i in lst:
+#     if i
 
 
 print("Преобразовали списки, только уникальные значения: ", lst2)
 
+d = {}
+lst3 = list()
+for i in lst:
+  d[i] = d.get(i, 0) + 1
+  print(d)
+
+for key, value in d.items():
+      if value == 1:
+        lst3.append(key)
+print(lst3)
 
 print("_" * otstup)
 
