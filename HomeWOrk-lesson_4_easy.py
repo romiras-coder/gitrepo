@@ -23,9 +23,6 @@ print(sp4)
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
-
 import random
-lst11 = [random.randint(-10, 10) for i in range(10)]
-lst_g = [random.randint(-10, 10) for i in range(10) if i > 0]
+lst_g = [i for i in range(random.randint(-10, 100), random.randint(-10, 100)) if i > 0 and i % 3 == 0 and i % 4 != 0]
 print('lst_g = ', lst_g)
-print('lst11 = ', lst11)
