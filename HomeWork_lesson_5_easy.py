@@ -32,7 +32,10 @@ print('_' * 50)
 # Напишите скрипт, отображающий папки текущей директории.
 print("Задача-2")
 import os
-print(os.listdir(os.getcwd()))
+def listt_dir():
+    return os.listdir(os.getcwd())
+listt_dir()
+
 print('_' * 50)
 
 # Задача-3:
