@@ -4,6 +4,8 @@
 # Т.е. из строки "mtMmEZUOmcq" нужно получить ['mt', 'm', 'mcq']
 # Решить задачу двумя способами: с помощью re и без.
 
+import re
+
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
        'TUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSAHqn'\
@@ -19,8 +21,16 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'qHFjvihuNGEEFsfnMXTfptvIOlhKhyYwxLnqOsBdGvnuyEZIheApQGOXWeXoLWiDQNJFa'\
        'XiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQoiQ'\
        'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGc'
+res = re.findall(r"[a-z]+", line)
+print(res)
 
-
+# ssp = []
+# for i in line:
+#        if i.islower():
+#               ssp.append(i)
+#        else:
+#               pass
+# print(ssp)
 # Задание-2:
 # Вывести символы в верхнем регистре, слева от которых находятся
 # два символа в нижнем регистре, а справа - два символа в верхнем регистре.
@@ -45,9 +55,33 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'JFaXiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQ'\
        'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
 
+res2 = re.findall(r"[a-z][a-z]([A-Z][A-Z]*)[A-Z][A-Z]", line_2)
+print(res2)
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
 # произвольными целыми цифрами, в результате в файле должно быть
 # 2500-значное произвольное число.
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
+
+import os, random, re
+
+path = os.path.join(os.getcwd(), '1.txt')
+path = open(path, 'a', encoding='UTF-8')
+path.write(str(random.random()))
+path.close()
+
+f = open('1.txt', 'r', encoding='UTF-8')
+f1 = f.readlines()
+print(f1)
+
+f2 = re.findall(r"\d{2}", str(f1))
+print('Нашли: ', f2)
+# for line in f1: # считываем файл построчно
+#        lines = re.findall(r'^\w', line)
+#        print("line   ", line)
+
+
+f.close()
+
+
