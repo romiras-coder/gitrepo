@@ -17,11 +17,14 @@ class Person:
         return self.name + ' ' + self.surname
 
 class Student(Person):
-    def __init__(self,name, surname, birtg_date, class_room, mother, father):
+    def __init__(self, name, surname, birtg_date, class_room, mother, father, lesson):
         super().__init__(name, surname, birtg_date)
         self.class_room = class_room
         self.mother = mother
         self.father = father
+        self.lesson = lesson
+    def get_class(self):
+        return self.class_room
 
 class Teacher(Person):
     def __init__(self, name, surname, birtg_date, class_room, lesson):
@@ -29,11 +32,18 @@ class Teacher(Person):
         self.lesson = lesson
         self.class_room = class_room
 
-students = [Student('Alex', 'Moskotlinov', '02.12.2014', '5 A', 'Roman', 'Tatiana'),
-            Student('Mikhail', 'Titov', '01.11.2013', '7 B', 'ivan', 'rita'),
-            Student('Irina', 'ivanova', '03.01.2014', '1 A', 'dmitriy', 'sveta'),
-            Student('Olesya', 'zaykina', '02.12.2014', '2 B', 'oleg', 'vika'),
-            Student('Stas', 'zoykin', '04.11.2015', '2 A', 'igor', 'rita')]
+students = [Student('Alex', 'Moskotlinov', '02.12.2014', '5 A', 'Roman', 'Tatiana', ['Matematika', 'Geometry']),
+            Student('Mikhail', 'Titov', '01.11.2013', '7 B', 'ivan', 'rita', ['Matematika', 'Geometry']),
+            Student('Irina', 'ivanova', '03.01.2014', '1 A', 'dmitriy', 'sveta', ['Matematika', 'Geometry']),
+            Student('Olesya', 'zaykina', '02.12.2014', '2 B', 'oleg', 'vika', ['Matematika', 'Geometry']),
+            Student('Stas', 'zoykin', '04.11.2015', '5 A', 'igor', 'rita', ['Matematika', 'Geometry'])]
+
+for student_all in students:
+    print(student_all.get_class())
+
+for student_all in students:
+    if student_all.class_room == '5 A':
+        print(student_all.get_full_name())
 
 teachers = [Teacher('Ivanov', 'Ivan', '01.01.1954', '2 B', 'Matematika'),
             Teacher('Sidorov', 'Alex', '11.01.1960', '1 A', 'Geometry')]
