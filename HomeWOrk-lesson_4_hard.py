@@ -15,8 +15,9 @@ def pMatrix(matrix):
         for x in row:
             print("{:4d}".format(x), end="")
         print()
-new_matrix = list(map(list, zip(*matrix)))
-pMatrix(new_matrix)
+print(list(map(list, zip(*matrix)))) # решение в строчку
+matrix_rotate = list(map(list, zip(*matrix))) # решение с красывым выводом
+pMatrix(matrix_rotate) # решение с красывым выводом
 # Суть сложности hard: Решите задачу в одну строку
 
 # Задание-2:
