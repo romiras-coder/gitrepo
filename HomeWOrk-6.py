@@ -6,8 +6,11 @@ otstup = 70
 # но только если результаты извлечения корня не имеют десятичной части и
 # если такой корень вообще можно извлечь
 # Пример: Дано: [2, -5, 8, 9, -25, 25, 4]   Результат: [3, 5, 2]
+print("Задача - 1")
+print("")
 
 
+print("_" * otstup)
 # Задача-2: Дана дата в формате dd.mm.yyyy, например: 02.11.2013.
 # Ваша задача вывести дату в текстовом виде, например: второе ноября 2013 года.
 # Склонением пренебречь (2000 года, 2010 года)
@@ -41,11 +44,9 @@ print("_" * otstup)
 print("Задача - 3")
 print("")
 
-# import random
-# # L = [random.randint(-100, 100)]
-# L = []
-# print(L)
-
+import random
+L = [i for i in range(-100, 101)]
+print("Диапазоне от -100 до 100", sorted(L))
 print("_" * otstup)
 
 # Задача-4: Дан список, заполненный произвольными целыми числами.
@@ -62,19 +63,27 @@ lst = [1, 2, 4, 5, 6, 2, 5, 2]
 lst2 = []
 
 print("Список: ", lst)
-#print("Преобразовали списки в множество, только уникальные значения: ", set(lst))
-# for n in lst:
-#     if n not in lst2:
-#         lst2.append(n)
-#         #print(lst2)
-# print("Преобразовали списки, только уникальные значения: ", lst2)
 
-for m in lst:
-    if m in lst:
-        print(m)
-        #lst2.append(m)
+for n in lst:
+    if n not in lst2:
+        lst2.append(n)
+        #print(lst2)
+# for i in lst:
+#     if i
+
 
 print("Преобразовали списки, только уникальные значения: ", lst2)
 
+d = {}
+lst3 = list()
+for i in lst:
+  d[i] = d.get(i, 0) + 1
+  print(d)
+
+for key, value in d.items():
+      if value == 1:
+        lst3.append(key)
+print(lst3)
 
 print("_" * otstup)
+
