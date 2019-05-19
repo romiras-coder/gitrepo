@@ -10,7 +10,13 @@ matrix = [[1, 0, 8],
 # matrix_rotate = [[1, 3, 0],
 #                  [0, 4, 4],
 #                  [8, 1, 2]]
-
+def pMatrix(matrix):
+    for row in matrix:
+        for x in row:
+            print("{:4d}".format(x), end="")
+        print()
+new_matrix = list(map(list, zip(*matrix)))
+pMatrix(new_matrix)
 # Суть сложности hard: Решите задачу в одну строку
 
 # Задание-2:
