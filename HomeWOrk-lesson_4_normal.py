@@ -68,20 +68,20 @@ import os, random, re
 
 path = os.path.join(os.getcwd(), '1.txt')
 path = open(path, 'a', encoding='UTF-8')
-path.write(str(random.random()))
+path.write(''.join([str(random.randint(0, 9)) for _ in range(2500)]))
 path.close()
 
 f = open('1.txt', 'r', encoding='UTF-8')
 f1 = f.readlines()
 print(f1)
 
-f2 = re.findall(r"\d{2}", str(f1))
-print('Нашли: ', f2)
-# for line in f1: # считываем файл построчно
-#        lines = re.findall(r'^\w', line)
-#        print("line   ", line)
-
-
+f2 = re.findall(r"((?P<digit>\d)(?P=digit)+)", str(f1)) # в паретне рисуем переменную digit
+print(f2)
+max_digit_number = ''
+for f1, digit in f2:
+       if len(f1) > len(max_digit_number): # сравниваем длинну строки файла f1
+              max_digit_number = f1
+print('Нашли: ', max_digit_number)
 f.close()
 
 
